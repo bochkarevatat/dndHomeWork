@@ -1,0 +1,149 @@
+body {
+  position: relative;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(104, 155, 184);
+}
+
+.block-container {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+  justify-content: space-between;
+  width: fit-content;
+  height: fit-content;
+
+  margin: 10px 5px;
+  text-align: center;
+
+  background-color: #dfdfdf;
+  border: 1px solid black;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+ul {
+  list-style-type: none;
+  min-height: 20px;
+  padding-left: 0px;
+  width: 100%;
+}
+
+.li-card {
+  position: relative;
+  display: block;
+  /* width: 100%; */
+  margin: 5px;
+  padding: 10px 15px 15px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 12px 50px 0 rgba(116, 114, 114, 0.26), 0 2px 10px 0 rgba(13, 13, 13, 0.32);
+  list-style-type: none;
+  color: black;
+  font-size: 25px;
+}
+
+.li-card:hover>.card-close {
+  display: block;
+}
+
+.card-close {
+  width: 10px;
+  height: 11px;
+  top: -7px;
+  right: 7px;
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  color:rgb(164, 153, 153);
+}
+
+.visually-hidden {
+  display: none;
+}
+
+a {
+  color: rgb(52, 49, 49);
+  margin: 10px;
+  font-size: 20px;
+  text-decoration: overline;
+}
+
+/* Добавление карточек */
+.add-container {
+  width: 100%;
+}
+
+.input-text {
+  position: relative;
+  display: block;
+  width: 96%;
+  height: 70px;
+  padding-left: 3px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  box-shadow: 0 12px 50px 0 rgba(116, 114, 114, 0.26), 0 2px 10px 0 rgba(13, 13, 13, 0.32);
+  resize: none;
+}
+
+.button {
+  padding: 10px;
+  background-color: rgb(8, 113, 121);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 15px;
+  box-shadow: 0 12px 50px 0 rgba(116, 114, 114, 0.26), 0 2px 10px 0 rgba(13, 13, 13, 0.32);
+}
+
+.close {
+  color: #000;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: crimson;
+}
+/* перенос блоков */
+.dragged {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid rgb(105, 105, 105);
+  opacity: 0.5;
+  width: 240px;
+  border-radius: 10px;
+  pointer-events: none;
+  background: rgb(201, 184, 184);
+  cursor: 'grabbing';
+}
+
+.opacity {
+  opacity: 0;
+}
+.li-card-active{
+  background-color: #ede3e3;
+}
