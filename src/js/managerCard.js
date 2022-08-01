@@ -26,7 +26,6 @@ export default function managerCard() {
       addContainer.appendChild(closeBtn);
       event.target.closest('div').appendChild(addContainer);
       event.target.classList.add('visually-hidden');
-
       inputTextCard.focus();
     }
 

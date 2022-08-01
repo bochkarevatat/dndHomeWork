@@ -147,3 +147,6 @@ a {
 .li-card-active{
   background-color: #ede3e3;
 }
+.error {
+  background: red;
+}

@@ -25,10 +25,10 @@ export default function dndCard() {
       startY = e.pageY - top;
 
       ghostEl = e.target.cloneNode(true);
-      ghostEl.innerHTML = '';
+      // ghostEl.innerHTML = '';
       ghostEl.style.backgroundColor = '#ede3e3';
-      ghostEl.style.width = `${widthEl}px`;
-      ghostEl.style.height = `${heightEl}px`;
+      ghostEl.style.width = draggedEl.offsetWidth;
+      ghostEl.style.height = draggedEl.offsetHeight;
 
       draggedEl.classList.add('dragged');
       e.target.parentNode.insertBefore(ghostEl, e.target.nextElementSibling);
@@ -44,7 +44,7 @@ export default function dndCard() {
     if (!draggedEl) {
       return;
     }
-    ghostEl.style.backgroundColor = '#ede3e3';
+    // ghostEl.style.backgroundColor = '#ede3e3';
     const closest = document.elementFromPoint(e.clientX, e.clientY);
     const {
       top,
@@ -66,8 +66,9 @@ export default function dndCard() {
   document.addEventListener('mouseleave', (e) => {
     if (draggedEl) {
       e.preventDefault();
-      // console.log('mouseleave');
+      // console.log(ghostEl.parentNode);
       ghostEl.parentNode.removeChild(ghostEl);
+      // ghostEl.remove()
       draggedEl.classList.remove('dragged');
       draggedEl.style = '';
       ghostEl = null;
@@ -90,9 +91,11 @@ export default function dndCard() {
       } else if (closest.classList.contains('dnd-todo') && !closest.querySelector('.li-card')) {
         closest.append(draggedEl);
       }
-      updateStorage();
       // console.log(updateStorage());
+      // console.log(ghostEl.parentNode)
       ghostEl.parentNode.removeChild(ghostEl);
+      // ghostEl.remove()
+      updateStorage();
       draggedEl.classList.remove('dragged');
       draggedEl.style = '';
       ghostEl = null;
